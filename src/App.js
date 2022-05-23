@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+export default function App() {
 
-function App() {
+ const posts = [
+  {
+    id: 1,
+    text: 'herlo, wurld',
+    timestamp: 'a minute ago',
+    author: {
+      username: 'blue_man02'
+    },
+  },
+  {
+    id: 2,
+    text: 'yah, whatever',
+    timestamp: 'an hour ago',
+    author: {
+      username: 'pink_pink'
+    },
+  },
+  ]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <>
+    <h1>Felix</h1>
+    {posts.length > 0 ?
+      posts.map(post => {
+        return (
+          <p key={post.id}>
+            <b>{post.author.username}</b> &mdash; {post.timestamp}
+            <br />
+          {post.text}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        );
+      })
+    :
+    <p>there are no posts.</p>
+    }
+    </>
   );
 }
-
-export default App;
