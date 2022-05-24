@@ -1,3 +1,5 @@
+import Container from "react-bootstrap/Container";
+
 export default function App() {
 
  const posts = [
@@ -17,9 +19,10 @@ export default function App() {
       username: 'pink_pink'
     },
   },
-  ]
+  ];
   
   return (
+    <Container fluid className="App">
     <>
     <h1>Felix</h1>
     {posts.length > 0 ?
@@ -36,5 +39,6 @@ export default function App() {
     <p>there are no posts.</p>
     }
     </>
+    </Container>
   );
 }
